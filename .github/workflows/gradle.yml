@@ -22,7 +22,7 @@ jobs:
         distribution: 'temurin'
         
     - name: Run application
-      run: ./backend/gradlew bootRun
+      run: ./gradlew bootRun
       working-directory: ./backend
 
   dependency-submission:
