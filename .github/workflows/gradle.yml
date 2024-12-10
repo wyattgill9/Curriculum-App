@@ -25,14 +25,14 @@ jobs:
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
     - name: Ensure gradlew is executable
-      run: chmod +x ./gradlew  # This grants execute permission to gradlew
+      run: chmod +x ./backend/gradlew  # Adjust path to gradlew if needed
 
     - name: Build with Gradle Wrapper
-      run: ./gradlew build
+      run: ./backend/gradlew build
       working-directory: ./backend
 
     - name: Run application
-      run: ./gradlew bootRun
+      run: ./backend/gradlew bootRun
       working-directory: ./backend
 
   dependency-submission:
