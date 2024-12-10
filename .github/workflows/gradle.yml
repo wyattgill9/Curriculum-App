@@ -24,9 +24,16 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
-    - name: Run with Gradle Wrapper
+    - name: Ensure gradlew is executable
+      run: chmod +x ./gradlew  # This grants execute permission to gradlew
+
+    - name: Build with Gradle Wrapper
+      run: ./gradlew build
+      working-directory: ./backend
+
+    - name: Run application
       run: ./gradlew bootRun
-      working-directory: ./backend  # Make sure the working directory is set to the backend folder
+      working-directory: ./backend
 
   dependency-submission:
     runs-on: ubuntu-latest
